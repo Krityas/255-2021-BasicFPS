@@ -5,21 +5,45 @@ using UnityEngine;
 public class DoorController : MonoBehaviour
 {
 
+    public Transform doorArt;
+
     private Camera cam;
 
-
     private float doorAngle = 0;
+
+    public float animLength = 0.5f;
+    private float animTimer = 0;
+    private bool animIsPlaying = false;
+
+    private bool isClosed = true;
 
     void Start()
     {
         cam = Camera.main;
     }
 
+    void Update()
+    {
+        if (animIsPlaying)
+        {
+            animTimer += Time.deltaTime;
+
+            float percent = animTimer / animLength;
+
+            if (percent < 0) percent = 0;
+            if (percent > 1) percent = 1;
+
+            doorAngle = percent * 90;
+            doorArt.rotation = Quaternion.Euler(0, doorAngle, 0);
+        }
+    }
+
+
     public void PlayerInteract(Vector3 position)
     {
-        if (animIsPlaying == true) return;
-
-        if (inventory.main.hasKey == false) return;
+        
+        
+        if (Inventory.main.hasKey == false) return;
 
         Vector3 disToPlayer = position - transform.position;
         disToPlayer = disToPlayer.normalized;
@@ -36,9 +60,9 @@ public class DoorController : MonoBehaviour
     }    
 }
 
-        
 
 
-    
-    
+
+
+
 

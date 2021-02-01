@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-
+        
         pawn = GetComponent<CharacterController>();
         cam = GetComponentInChildren<Camera>();
 

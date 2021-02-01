@@ -4,15 +4,34 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private static Inventory _main;
+
+    public static Inventory main
     {
-        
+        get { return _main; }
     }
 
-    // Update is called once per frame
-    void Update()
+    public bool hasKey = false;
+    public bool hasHat = false;
+    public bool hasBooks = false;
+    public bool hasMoney = false;
+    public bool hasPhone1 = false;
+    public bool hasBall = false;
+    public bool hasPhone2 = false;
+    public bool hasLaptop = false;
+
+
+    private void Start()
     {
-        
+        if (_main == null)
+        {
+            _main = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
     }
 }
