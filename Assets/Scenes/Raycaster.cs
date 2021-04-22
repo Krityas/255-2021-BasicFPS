@@ -33,8 +33,8 @@ public class Raycaster : MonoBehaviour
             {
                 // raycast hit a collider in the scene!
 
-                DoorController door = hit.transform.GetComponent<DoorController>();
-                if (door != null) door.PlayerInteract(transform.parent.position);
+                //DoorController door = hit.transform.GetComponent<DoorController>();
+                //if (door != null) door.PlayerInteract(transform.parent.position);
 
                 ItemPickup pickup = hit.transform.GetComponent<ItemPickup>();
                 if (pickup != null) pickup.PlayerInteract();

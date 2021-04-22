@@ -1273,6 +1273,57 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &214250188
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 214250190}
+  - component: {fileID: 214250189}
+  m_Layer: 0
+  m_Name: Inventory System
+  m_TagString: Untagged
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &214250189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 214250188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcfb85717aab8e64c8114a6dede9d519, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasKey: 0
+  hasHat: 0
+  hasBooks: 0
+  hasMoney: 0
+  hasPhone1: 0
+  hasBall: 0
+  hasPhone2: 0
+  hasLaptop: 0
+--- !u!4 &214250190
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 214250188}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 27.75}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 37
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &230312567
 GameObject:
   m_ObjectHideFlags: 0
@@ -2515,6 +2566,7 @@ GameObject:
   - component: {fileID: 501566790}
   - component: {fileID: 501566789}
   - component: {fileID: 501566788}
+  - component: {fileID: 501566792}
   m_Layer: 0
   m_Name: baseball
   m_TagString: Untagged
@@ -2530,7 +2582,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 501566787}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -2592,12 +2644,24 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 501566787}
   m_LocalRotation: {x: 0.70463777, y: -0, z: -0, w: 0.70956725}
-  m_LocalPosition: {x: -0.09, y: 0.17, z: 14.31}
+  m_LocalPosition: {x: -0.09, y: 0.47, z: 14.3}
   m_LocalScale: {x: 0.3727483, y: 0.3869807, z: 0.37625334}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &501566792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501566787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33c902be40d8ba84d9200d2aa367a65c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &515575097
 GameObject:
   m_ObjectHideFlags: 0
@@ -5452,7 +5516,7 @@ Camera:
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
-  m_FOVAxisMode: 0
+  m_FOVAxisMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
   m_FocalLength: 50
@@ -5464,7 +5528,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 39.2
+  field of view: 37.15756
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -11544,8 +11608,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1908663128}
-  - component: {fileID: 1908663127}
   - component: {fileID: 1908663129}
+  - component: {fileID: 1908663127}
   m_Layer: 0
   m_Name: ThePlayer
   m_TagString: Untagged
@@ -11565,7 +11629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef82e53acb83bb84e8b7f7b6bc3e64ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 7
   mouseSensitivityX: 2
   mouseSensitivityY: 2
 --- !u!4 &1908663128
@@ -11576,8 +11640,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1908663126}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.526, y: 1.84, z: -0.485}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.71261, y: 1.5813, z: -4.1544}
+  m_LocalScale: {x: 0.42657232, y: 0.48661304, z: 0.5907}
   m_Children:
   - {fileID: 963194228}
   m_Father: {fileID: 0}
@@ -11594,7 +11658,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
+  m_Height: 5
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
