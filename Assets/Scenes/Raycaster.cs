@@ -35,10 +35,29 @@ public class Raycaster : MonoBehaviour
 
                 //DoorController door = hit.transform.GetComponent<DoorController>();
                 //if (door != null) door.PlayerInteract(transform.parent.position);
+                HatPickup hatpickup = hit.transform.GetComponent<HatPickup>();
+                if (hatpickup != null) hatpickup.HatInteract();
 
-                ItemPickup pickup = hit.transform.GetComponent<ItemPickup>();
-                if (pickup != null) pickup.PlayerInteract();
+                BallPickup ballpickup = hit.transform.GetComponent<BallPickup>();
+                if (ballpickup != null) ballpickup.BallInteract();
 
+                KeyPickup keypickup = hit.transform.GetComponent<KeyPickup>();
+                if (keypickup != null) keypickup.KeyInteract();
+
+                MoneyPickup moneypickup = hit.transform.GetComponent<MoneyPickup>();
+                if (moneypickup != null) moneypickup.MoneyInteract();
+
+                Phone1Pickup phone1pickup = hit.transform.GetComponent<Phone1Pickup>();
+                if (phone1pickup != null) phone1pickup.Phone1Interact();
+
+                Phone2Pickup phone2pickup = hit.transform.GetComponent<Phone2Pickup>();
+                if (phone2pickup != null) phone2pickup.Phone2Interact();
+
+                LaptopPickup laptoppickup = hit.transform.GetComponent<LaptopPickup>();
+                if (laptoppickup != null) laptoppickup.LaptopInteract();
+
+                BooksPickup bookspickup = hit.transform.GetComponent<BooksPickup>();
+                if (bookspickup != null) bookspickup.BooksInteract();
             }
         }
     }

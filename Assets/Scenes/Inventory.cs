@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+    // the inventory of every item. always set to false unless the item is clicked on, which then makes it become true
     private static Inventory _main;
 
     public static Inventory main

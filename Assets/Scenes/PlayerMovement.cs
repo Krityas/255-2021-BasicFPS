@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    // camera turn speed and sensitivity
     public float moveSpeed = 2;
     public float mouseSensitivityX = 10;
     public float mouseSensitivityY = 10;
@@ -13,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
 
     float cameraPitch = 0;
 
+    //Hides the cursor when you click in game
     void Start()
     {
         Cursor.visible = false;
@@ -25,6 +27,8 @@ public class PlayerMovement : MonoBehaviour
         MovePlayer();
         TurnPlayer();
     }
+
+    //turns the player on the x and y axis
     void TurnPlayer()
     {
         float h = Input.GetAxis("Mouse X");
@@ -37,6 +41,8 @@ public class PlayerMovement : MonoBehaviour
 
         cam.transform.localRotation = Quaternion.Euler(cameraPitch, 0, 0);
     }
+
+    // allows the player to look up and down
     void MovePlayer()
     {
         // get input:

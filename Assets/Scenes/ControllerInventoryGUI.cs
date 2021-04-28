@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class ControllerInventoryGUI : MonoBehaviour
 {
+    // inventory gui system. when something is picked up, it'll appear on screen on the list
     public Transform imgKey;
     public Transform imgHat;
     public Transform imgBooks;
@@ -17,7 +18,7 @@ public class ControllerInventoryGUI : MonoBehaviour
 
    
 
-    // Update is called once per frame
+    // every text image of each item
     void Update()
     {
         imgKey.gameObject.SetActive(Inventory.main.hasKey);
