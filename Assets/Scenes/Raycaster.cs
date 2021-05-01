@@ -29,12 +29,15 @@ public class Raycaster : MonoBehaviour
             //draw ray:
             Debug.DrawRay(ray.origin, ray.direction, Color.red, .5f);
 
+            // allows for the player to interact with objects or destroy them
             if (Physics.Raycast(ray, out hit))
             {
                 // raycast hit a collider in the scene!
 
                 //DoorController door = hit.transform.GetComponent<DoorController>();
                 //if (door != null) door.PlayerInteract(transform.parent.position);
+
+
                 HatPickup hatpickup = hit.transform.GetComponent<HatPickup>();
                 if (hatpickup != null) hatpickup.HatInteract();
 
@@ -58,6 +61,12 @@ public class Raycaster : MonoBehaviour
 
                 BooksPickup bookspickup = hit.transform.GetComponent<BooksPickup>();
                 if (bookspickup != null) bookspickup.BooksInteract();
+
+                WallDestroy walldestroy = hit.transform.GetComponent<WallDestroy>();
+                if (walldestroy != null) walldestroy.WallDestroyed();
+
+                DestroyWall destroywall = hit.transform.GetComponent<DestroyWall>();
+                if (destroywall != null) destroywall.DestroyedWall();
             }
         }
     }
